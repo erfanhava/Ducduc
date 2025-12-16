@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>AI Camera | Magic Selfie Filters</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="https://img.icons8.com/color/96/000000/camera--v1.png">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <div class="logo">
+                <i class="fas fa-camera"></i>
+                <h1>AI Magic Camera</h1>
+            </div>
+            <button id="infoBtn" class="icon-btn">
+                <i class="fas fa-info-circle"></i>
+            </button>
+        </header>
+
+        <!-- Camera View -->
+        <div class="camera-section">
+            <div class="camera-container">
+                <video id="video" autoplay playsinline></video>
+                <canvas id="canvas" style="display: none;"></canvas>
+                
+                <!-- Preview of captured image -->
+                <div id="previewContainer" class="preview-container">
+                    <img id="previewImage" src="" alt="Preview">
+                    <button id="closePreview" class="close-btn">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Camera Controls -->
+            <div class="controls">
+                <button id="captureBtn" class="capture-btn">
+                    <div class="capture-circle"></div>
+                </button>
+                <button id="flipCamera" class="icon-btn">
+                    <i class="fas fa-sync-alt"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Filters Section -->
+        <div class="filters-section">
+            <h2><i class="fas fa-magic"></i> AI Filters</h2>
+            <div class="filter-list">
+                <button class="filter-btn active" data-filter="normal">
+                    <i class="fas fa-user"></i>
+                    <span>Normal</span>
+                </button>
+                <button class="filter-btn" data-filter="vintage">
+                    <i class="fas fa-umbrella-beach"></i>
+                    <span>Vintage</span>
+                </button>
+                <button class="filter-btn" data-filter="disco">
+                    <i class="fas fa-disco-ball"></i>
+                    <span>Disco</span>
+                </button>
+                <button class="filter-btn" data-filter="argentino">
+                    <i class="fas fa-tango"></i>
+                    <span>Argentino</span>
+                </button>
+                <button class="filter-btn" data-filter="cool">
+                    <i class="fas fa-snowflake"></i>
+                    <span>Cool</span>
+                </button>
+                <button class="filter-btn" data-filter="warm">
+                    <i class="fas fa-sun"></i>
+                    <span>Warm</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Actions -->
+        <div class="actions">
+            <button id="downloadBtn" class="action-btn">
+                <i class="fas fa-download"></i> Save
+            </button>
+            <button id="shareBtn" class="action-btn share">
+                <i class="fas fa-share-alt"></i> Share
+            </button>
+            <button id="batchBtn" class="action-btn">
+                <i class="fas fa-th"></i> Style Grid
+            </button>
+        </div>
+
+        <!-- Info Modal -->
+        <div id="infoModal" class="modal">
+            <div class="modal-content">
+                <h2><i class="fas fa-info-circle"></i> About AI Camera</h2>
+                <p>Take amazing photos with AI-powered filters! This app runs completely in your browser - no data is sent to any server.</p>
+                <p><strong>Features:</strong></p>
+                <ul>
+                    <li>📸 Take photos with your camera</li>
+                    <li>🎨 Apply creative AI filters</li>
+                    <li>📱 Mobile-friendly design</li>
+                    <li>💾 Save or share your creations</li>
+                </ul>
+                <p><strong>Coming Soon:</strong> Advanced AI enhancement, style grids, and more filters!</p>
+                <button id="closeModal" class="close-modal">Got it!</button>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer>
+            <p>Built with <i class="fas fa-heart"></i> | Hosted on Vercel | No data stored</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
