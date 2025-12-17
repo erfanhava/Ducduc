@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Job Report Generator</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#0066ff" />
+  <link rel="manifest" href="manifest.json" />
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js"></script>
+</head>
+<body>
+  <header>
+    <h1>Job Report</h1>
+    <button id="loginBtn" class="outline">Sign-in (Google)</button>
+  </header>
+
+  <main>
+    <section id="cameraSec">
+      <video id="video" playsinline autoplay></video>
+      <canvas id="canvas" style="display:none;"></canvas>
+      <div class="btn-row">
+        <button id="snapBtn">📷 Take Photo</button>
+        <button id="micBtn">🎤 Dictate Note</button>
+      </div>
+    </section>
+
+    <section id="previewSec">
+      <h2>Photos (<span id="photoCount">0</span>)</h2>
+      <div id="gallery"></div>
+      <label>Notes
+        <textarea id="notes" rows="4" placeholder="Speak or type job notes…"></textarea>
+      </label>
+      <button id="genBtn" class="primary">Generate PDF & Share Link</button>
+    </section>
+
+    <section id="resultSec" hidden>
+      <h2>Done ✅</h2>
+      <p><a id="pdfLink" target="_blank">Open Report</a></p>
+    </section>
+  </main>
+
+  <footer>Powered by ☕ and free APIs</footer>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
